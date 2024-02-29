@@ -1,0 +1,140 @@
+PCCY = "C:/Users/roman_pecora/Documents/Audacity/“The Power of Christ compels you” edit.wav"
+
+
+define :drums do
+  with_bpm 120 do
+    sample :hat_snap
+    sleep 0.2
+    sample :hat_snap
+    sleep 0.2
+    sample :hat_snap
+    sleep 0.2
+    sample :hat_snap
+    sleep 0.2
+    sample :hat_snap
+    sleep 0.2
+    sample :hat_snap
+    sleep 0.2
+    sample :hat_snap
+    sleep 0.2
+    sample :hat_snap
+    sleep 0.2
+  end
+end
+
+define :main_theme do
+  play :E5
+  sleep 0.20
+  play :A5
+  sleep 0.20
+  play :E5
+  sleep 0.20
+  play :B5
+  sleep 0.20
+  play :E5
+  sleep 0.20
+  play :G5
+  sleep 0.20
+  play :A5
+  sleep 0.20
+  play :E5
+  sleep 0.20
+  play :C6
+  sleep 0.20
+  play :E5
+  sleep 0.20
+  play :D6
+  sleep 0.20
+  play :E5
+  sleep 0.20
+  play :B5
+  sleep 0.20
+  play :C6
+  sleep 0.20
+  play :E5
+  sleep 0.20
+  
+  play :A5
+  sleep 0.20
+  play :E5
+  sleep 0.20
+  play :B5
+  sleep 0.20
+  play :E5
+  sleep 0.20
+  play :G5
+  sleep 0.20
+  play :A5
+  sleep 0.20
+  play :E5
+  sleep 0.20
+  play :C6
+  sleep 0.20
+  play :E5
+  sleep 0.20
+  play :D6
+  sleep 0.20
+  play :E5
+  sleep 0.20
+  play :B5
+  sleep 0.20
+  play :C6
+  sleep 0.20
+  play :E5
+  sleep 0.20
+  play :B5
+  sleep 0.20
+end
+
+
+
+live_loop :tubular_bells do
+  8.times do
+    use_synth :piano
+    main_theme
+    with_fx :level, amp: 0.5 do
+    end
+  end
+  stop
+end
+
+sleep 6
+
+live_loop :harmony do
+  4.times do
+    with_fx :level, amp: 1 do
+      use_synth :organ_tonewheel
+      main_theme
+    end
+  end
+  stop
+end
+
+sleep 6
+
+live_loop :drums do
+  12.times do
+    with_fx :level, amp: 0.5 do
+      drums
+    end
+  end
+  stop
+end
+
+
+live_loop :tubular_bells do
+  6.times do
+    with_fx :level, amp: 0.5 do
+      use_synth :tech_saws
+      main_theme
+    end
+  end
+  stop
+end
+
+sleep 18
+
+sample PCCU with_fx :level, distortion: 0.3 do
+  
+  sleep 1
+  
